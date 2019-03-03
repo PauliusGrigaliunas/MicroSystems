@@ -6,11 +6,12 @@
 >
 <h:head/>
 <h:body>
-    <h2>Players:</h2>
+    <h2>Candidates:</h2>
     <ol>
 
-        <ui:repeat value="#{players.allPlayers}" var="player">
-            <li>#{player.name}</li>
+        <ui:repeat value="#{candidates.allCandidates}" var="candidate">
+            <li>#{candidate.name} #{candidate.surname}</li>
+
         </ui:repeat>
     </ol>
     <button type="button" onclick="alert('Hello world!')">Click Me!</button>

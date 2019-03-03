@@ -43,6 +43,12 @@
       <artifactId>lombok</artifactId>
       <version>1.16.16</version>
     </dependency>
+    <!--h2 database-->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.195</version>
+    </dependency>
   </dependencies>
 
   <build>
