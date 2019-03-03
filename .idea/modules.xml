@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MicroSystems.iml" filepath="$PROJECT_DIR$/MicroSystems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-ee-practice.iml" filepath="$PROJECT_DIR$/java-ee-practice.iml" />
     </modules>
   </component>
 </project>
