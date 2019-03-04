@@ -4,8 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
-
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Candidate.findAll", query = "select a from Candidate as a")
+})
 @Table(name = "CANDIDATE")
 public class Candidate implements Serializable {
 
@@ -18,7 +20,7 @@ public class Candidate implements Serializable {
 
     public Candidate(String name, String surname) {
         this.name = name;
-        this.surname = surname;
+        this.surname = "Ona";
     }
 
     public String getName() {return name;}

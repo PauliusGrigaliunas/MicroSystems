@@ -11,9 +11,12 @@
 
         <ui:repeat value="#{candidates.allCandidates}" var="candidate">
             <li>#{candidate.name} #{candidate.surname}</li>
-
         </ui:repeat>
     </ol>
-    <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+    <h:form>
+        <h:inputText value="#{candidates.candidateToCreate.name}" required="true" />
+        <h:inputText value="#{candidates.candidateToCreate.surname}" required="true" />
+        <h:commandButton value="Add new candidate" action="#{candidates.createCandidate}" />
+    </h:form>
 </h:body>
 </html>
