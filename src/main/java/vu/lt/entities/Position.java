@@ -1,5 +1,4 @@
 package vu.lt.entities;
-
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -9,11 +8,11 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Candidate.findAll", query = "select a from Candidate as a")
+        @NamedQuery(name = "Position.findAll", query = "select a from Position as a")
 })
-@Table(name = "CANIDATE")
+@Table(name = "POSITION")
 @Getter @Setter
-public class Candidate implements Serializable {
+public class Position implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,17 +22,13 @@ public class Candidate implements Serializable {
     @Column(name = "NAME")*/
     private String name;
 
-    /*@Size(max = 50)
-    @Column(name = "SURNAME")*/
-    private String surname;
 
-    public Candidate() {
+    public Position() {
 
     }
 
-    public Candidate(String name, String surname) {
+    public Position(String name) {
         this.name = name;
-        this.surname = surname;
     }
 
 
@@ -41,14 +36,13 @@ public class Candidate implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Candidate candidate = (Candidate) o;
-        return  Objects.equals(id, candidate.id) &&
-                Objects.equals(name, candidate.name) &&
-                Objects.equals(surname, candidate.surname);
+        Position position = (Position) o;
+        return  Objects.equals(id, position.id) &&
+                Objects.equals(name, position.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname);
+        return Objects.hash(id, name);
     }
 }

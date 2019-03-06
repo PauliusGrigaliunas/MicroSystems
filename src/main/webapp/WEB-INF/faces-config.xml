@@ -7,11 +7,21 @@
         version="2.0">
 
     <navigation-rule>
-        <from-view-id>/index.xhtml</from-view-id>
+        <from-view-id>/candidates.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{candidates.createCandidate}</from-action>
             <from-outcome>success</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/candidates.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/candidates.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{positions.createPosition}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/positions.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
