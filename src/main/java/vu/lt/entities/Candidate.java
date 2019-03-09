@@ -5,6 +5,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,13 +20,11 @@ public class Candidate implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /*@Size(max = 50)
-    @Column(name = "NAME")*/
     private String name;
-
-    /*@Size(max = 50)
-    @Column(name = "SURNAME")*/
     private String surname;
+
+    @OneToMany(mappedBy = "candidate")
+    private List<Interview> Interviews;
 
     public Candidate() {
 
