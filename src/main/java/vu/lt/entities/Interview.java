@@ -23,6 +23,8 @@ public class Interview {
 
     @ManyToOne
     @JoinColumn(name="CANDIDATE_ID")
+
+
     private Candidate candidate;
 
     public Interview(){

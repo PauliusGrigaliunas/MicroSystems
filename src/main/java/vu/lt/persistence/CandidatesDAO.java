@@ -16,6 +16,10 @@ public class CandidatesDAO {
         return em.createNamedQuery("Candidate.findAll", Candidate.class).getResultList();
     }
 
+    public Candidate findOne(Integer id) {
+        return em.find(Candidate.class, id);
+    }
+
     public void setEm(EntityManager em) {
         this.em = em;
     }

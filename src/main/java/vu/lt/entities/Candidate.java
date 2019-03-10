@@ -5,6 +5,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,8 +24,8 @@ public class Candidate implements Serializable {
     private String name;
     private String surname;
 
-    @OneToMany(mappedBy = "candidate")
-    private List<Interview> Interviews;
+    @OneToMany(mappedBy = "candidate" , fetch = FetchType.EAGER)
+    private List<Interview> Interviews = new ArrayList<>();
 
     public Candidate() {
 
