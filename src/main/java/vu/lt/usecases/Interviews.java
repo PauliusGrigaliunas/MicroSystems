@@ -21,7 +21,7 @@ public class Interviews{
     private Interview interviewToCreate = new Interview();
 
     @Getter
-    private List<Interview> allInterview;
+    private List<Interview> allInterviews;
 
     @PostConstruct
     public void init(){
@@ -35,6 +35,6 @@ public class Interviews{
     }
 
     private void loadAllInterviews(){
-        this.allInterview = interviewDAO.loadAll();
+        this.allInterviews = interviewDAO.loadAll();
     }
 }

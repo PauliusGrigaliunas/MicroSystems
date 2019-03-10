@@ -17,11 +17,21 @@
     </navigation-rule>
 
     <navigation-rule>
-        <from-view-id>/candidates.xhtml</from-view-id>
+        <from-view-id>/positions.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{positions.createPosition}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/positions.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/interviews.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{interviews.createInterview}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/interviews.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
