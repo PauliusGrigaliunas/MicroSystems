@@ -13,17 +13,17 @@ public class InterviewDAO {
         @PersistenceContext
         private EntityManager em;
 
-        public List<Interview> loadAll() {
+        /*public List<Interview> loadAll() {
             return em.createNamedQuery("Interview.findAll", Interview.class).getResultList();
-        }
+        }*/
 
-        public void setEm(EntityManager em) {
+       /* public void setEm(EntityManager em) {
             this.em = em;
-        }
+        }*/
 
         public void persist(Interview interview){
             this.em.persist(interview);
         }
 
-        public Interview findOne(Integer id) { return em.find(Interview.class, id); }
+        /*public Interview findOne(Integer id) { return em.find(Interview.class, id); }*/
 }

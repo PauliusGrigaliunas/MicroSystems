@@ -7,16 +7,18 @@ import vu.lt.entities.Interview;
 import vu.lt.persistence.CandidatesDAO;
 import vu.lt.persistence.InterviewDAO;
 
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 @Model
-public class InterviewsForCandidates {
+public class InterviewsForCandidates implements Serializable {
 
     @Inject
     private CandidatesDAO candidatesDAO ;
@@ -30,26 +32,20 @@ public class InterviewsForCandidates {
     @Getter @Setter
     private Interview interviewToCreate = new Interview();
 
-
     @Getter
     private List<Interview> allInterviews;
 
 
     @PostConstruct
     public void init() {
-        loadAllInterviews();
+        //loadAllInterviews();
 
-        /*Map<String, String> requestParameters =
+        Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer candidateId = Integer.parseInt(requestParameters.get("candidateId"));
-        this.candidate = candidatesDAO.findOne(candidateId);*/
+        this.candidate = candidatesDAO.findOne(candidateId);
     }
 
-    /*@Transactional
-    public String createInterview(){
-        this.interviewDAO.persist(interviewToCreate);
-        return "success";
-    }*/
 
     @Transactional
     public String createInterview() {
@@ -59,7 +55,7 @@ public class InterviewsForCandidates {
     }
 
 
-    private void loadAllInterviews(){
+    /*private void loadAllInterviews(){
         this.allInterviews = interviewDAO.loadAll();
-    }
+    }*/
 }

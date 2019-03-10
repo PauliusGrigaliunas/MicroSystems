@@ -26,7 +26,7 @@
         </navigation-case>
     </navigation-rule>
 
-    <navigation-rule>
+    <!--<navigation-rule>
         <from-view-id>/interviews.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{interviews.createInterview}</from-action>
@@ -34,5 +34,5 @@
             <to-view-id>/interviews.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-    </navigation-rule>
+    </navigation-rule>-->
 </faces-config>

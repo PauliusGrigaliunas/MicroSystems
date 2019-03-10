@@ -15,7 +15,7 @@ import java.util.Objects;
 })
 @Table(name = "CANIDATE")
 @Getter @Setter
-public class Candidate implements Serializable {
+public class Candidate{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,12 +30,6 @@ public class Candidate implements Serializable {
     public Candidate() {
 
     }
-
-    public Candidate(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
-
 
     @Override
     public boolean equals(Object o) {
