@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Interview:</h2>
+    <ol>
+        <ui:repeat value="#{interviews.allInterviews}" var="interview">
+            <li><h:link value="#{interview.name}" outcome="candidates?candidateId=#{interview.id}"/></li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{interviews.interviewToCreate.name}" required="true" />
+        <h:commandButton value="Add new interview" action="#{interviews.createInterview}" />
+    </h:form>
+</h:body>
+</html>
